@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.33.0">
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/straight-shoota/sanitize">
+  <title>Sanitize::Adapter::LibXML2 - github.com/straight-shoota/sanitize</title>
+  <script type="text/javascript">
+    CrystalDoc.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/straight-shoota/sanitize/Sanitize" data-name="sanitize">
+      <a href="../../Sanitize.html">Sanitize</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/straight-shoota/sanitize/Sanitize/Adapter" data-name="sanitize::adapter">
+      <a href="../../Sanitize/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/straight-shoota/sanitize/Sanitize/Adapter/LibXML2" data-name="sanitize::adapter::libxml2">
+      <a href="../../Sanitize/Adapter/LibXML2.html">LibXML2</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy" data-name="sanitize::policy">
+      <a href="../../Sanitize/Policy.html">Policy</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/HTMLSanitizer" data-name="sanitize::policy::htmlsanitizer">
+      <a href="../../Sanitize/Policy/HTMLSanitizer.html">HTMLSanitizer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/Text" data-name="sanitize::policy::text">
+      <a href="../../Sanitize/Policy/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/Whitelist" data-name="sanitize::policy::whitelist">
+      <a href="../../Sanitize/Policy/Whitelist.html">Whitelist</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor" data-name="sanitize::processor">
+      <a href="../../Sanitize/Processor.html">Processor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor/CONTINUE" data-name="sanitize::processor::continue">
+      <a href="../../Sanitize/Processor/CONTINUE.html">CONTINUE</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor/STOP" data-name="sanitize::processor::stop">
+      <a href="../../Sanitize/Processor/STOP.html">STOP</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/URISanitizer" data-name="sanitize::urisanitizer">
+      <a href="../../Sanitize/URISanitizer.html">URISanitizer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Sanitize::Adapter::LibXML2
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Sanitize/Adapter/LibXML2.html">Sanitize::Adapter::LibXML2</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../../Sanitize/Adapter.html">Sanitize::Adapter</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L1" target="_blank">
+        adapter/libxml2.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(builder:XML::Builder)-class-method" class="signature"><strong>.new</strong>(builder : XML::Builder)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#build(fragment:Bool,&)-class-method" class="signature"><strong>.build</strong>(fragment : Bool, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse(html:String,fragment:Bool)-class-method" class="signature"><strong>.parse</strong>(html : String, fragment : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process(policy:Policy,html:String,fragment:Bool=false)-class-method" class="signature"><strong>.process</strong>(policy : Policy, html : String, fragment : Bool = <span class="n">false</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process(policy:Policy,node:XML::Node,fragment:Bool=false)-class-method" class="signature"><strong>.process</strong>(policy : Policy, node : XML::Node, fragment : Bool = <span class="n">false</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process(policy:Policy,node:XML::Node,builder:XML::Builder,fragment:Bool=false)-class-method" class="signature"><strong>.process</strong>(policy : Policy, node : XML::Node, builder : XML::Builder, fragment : Bool = <span class="n">false</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#visit(processor:Processor,node:XML::Node,fragment:Bool)-class-method" class="signature"><strong>.visit</strong>(processor : Processor, node : XML::Node, fragment : Bool)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#end_tag(name:String,attributes:Hash(String,String)):Nil-instance-method" class="signature"><strong>#end_tag</strong>(name : String, attributes : Hash(String, String)) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#start_tag(name:String,attributes:Hash(String,String)):Nil-instance-method" class="signature"><strong>#start_tag</strong>(name : String, attributes : Hash(String, String)) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#write_text(text:String):Nil-instance-method" class="signature"><strong>#write_text</strong>(text : String) : Nil</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../../Sanitize/Adapter.html">Sanitize::Adapter</a></code></h3>
+  
+  
+    <a href="../../Sanitize/Adapter.html#end_tag(name:String,attributes:Hash(String,String)):Nil-instance-method" class="tooltip">
+      <span>end_tag(name : String, attributes : Hash(String, String)) : Nil</span>
+    end_tag</a>, 
+    
+  
+    <a href="../../Sanitize/Adapter.html#start_tag(name:String,attributes:Hash(String,String)):Nil-instance-method" class="tooltip">
+      <span>start_tag(name : String, attributes : Hash(String, String)) : Nil</span>
+    start_tag</a>, 
+    
+  
+    <a href="../../Sanitize/Adapter.html#write_text(text:String):Nil-instance-method" class="tooltip">
+      <span>write_text(text : String) : Nil</span>
+    write_text</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(builder:XML::Builder)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(builder : XML::Builder)
+
+        <a class="method-permalink" href="#new(builder:XML::Builder)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="build(fragment:Bool,&amp;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>build</strong>(fragment : Bool, &)
+
+        <a class="method-permalink" href="#build(fragment:Bool,&)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L32" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse(html:String,fragment:Bool)-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse</strong>(html : String, fragment : Bool)
+
+        <a class="method-permalink" href="#parse(html:String,fragment:Bool)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process(policy:Policy,html:String,fragment:Bool=false)-class-method">
+      <div class="signature">
+        
+        def self.<strong>process</strong>(policy : <a href="../../Sanitize/Policy.html">Policy</a>, html : String, fragment : Bool = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#process(policy:Policy,html:String,fragment:Bool=false)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process(policy:Policy,node:XML::Node,fragment:Bool=false)-class-method">
+      <div class="signature">
+        
+        def self.<strong>process</strong>(policy : <a href="../../Sanitize/Policy.html">Policy</a>, node : XML::Node, fragment : Bool = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#process(policy:Policy,node:XML::Node,fragment:Bool=false)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process(policy:Policy,node:XML::Node,builder:XML::Builder,fragment:Bool=false)-class-method">
+      <div class="signature">
+        
+        def self.<strong>process</strong>(policy : <a href="../../Sanitize/Policy.html">Policy</a>, node : XML::Node, builder : XML::Builder, fragment : Bool = <span class="n">false</span>)
+
+        <a class="method-permalink" href="#process(policy:Policy,node:XML::Node,builder:XML::Builder,fragment:Bool=false)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="visit(processor:Processor,node:XML::Node,fragment:Bool)-class-method">
+      <div class="signature">
+        
+        def self.<strong>visit</strong>(processor : <a href="../../Sanitize/Processor.html">Processor</a>, node : XML::Node, fragment : Bool)
+
+        <a class="method-permalink" href="#visit(processor:Processor,node:XML::Node,fragment:Bool)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="end_tag(name:String,attributes:Hash(String,String)):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>end_tag</strong>(name : String, attributes : Hash(String, String)) : Nil
+
+        <a class="method-permalink" href="#end_tag(name:String,attributes:Hash(String,String)):Nil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L130" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="start_tag(name:String,attributes:Hash(String,String)):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>start_tag</strong>(name : String, attributes : Hash(String, String)) : Nil
+
+        <a class="method-permalink" href="#start_tag(name:String,attributes:Hash(String,String)):Nil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L125" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="write_text(text:String):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>write_text</strong>(text : String) : Nil
+
+        <a class="method-permalink" href="#write_text(text:String):Nil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/adapter/libxml2.cr#L134" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

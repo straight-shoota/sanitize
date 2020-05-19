@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.33.0">
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/straight-shoota/sanitize">
+  <title>README - github.com/straight-shoota/sanitize</title>
+  <script type="text/javascript">
+  CrystalDoc.base_path = "";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize" data-name="sanitize">
+      <a href="Sanitize.html">Sanitize</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize/Adapter" data-name="sanitize::adapter">
+      <a href="Sanitize/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Adapter/LibXML2" data-name="sanitize::adapter::libxml2">
+      <a href="Sanitize/Adapter/LibXML2.html">LibXML2</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy" data-name="sanitize::policy">
+      <a href="Sanitize/Policy.html">Policy</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/HTMLSanitizer" data-name="sanitize::policy::htmlsanitizer">
+      <a href="Sanitize/Policy/HTMLSanitizer.html">HTMLSanitizer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/Text" data-name="sanitize::policy::text">
+      <a href="Sanitize/Policy/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/Whitelist" data-name="sanitize::policy::whitelist">
+      <a href="Sanitize/Policy/Whitelist.html">Whitelist</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor" data-name="sanitize::processor">
+      <a href="Sanitize/Processor.html">Processor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor/CONTINUE" data-name="sanitize::processor::continue">
+      <a href="Sanitize/Processor/CONTINUE.html">CONTINUE</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor/STOP" data-name="sanitize::processor::stop">
+      <a href="Sanitize/Processor/STOP.html">STOP</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/URISanitizer" data-name="sanitize::urisanitizer">
+      <a href="Sanitize/URISanitizer.html">URISanitizer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="sanitize" class="anchor" href="#sanitize">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>sanitize</h1>
+
+<p><code>sanitize</code> is a Crystal library for transforming HTML/XML trees. It's primarily
+used to sanitize HTML from untrusted sources in order to prevent
+<a href="http://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank">XSS attacks</a> and other
+adversities.</p>
+
+<p>It builds on stdlib's <a href="https://crystal-lang.org/api/XML.html" target="_blank"><code>XML</code></a> module to
+parse HTML/XML. Based on <a href="http://xmlsoft.org/" target="_blank">libxml2</a> it's a solid parser and
+turns malformed and malicious input into valid and safe markup.</p>
+
+<ul><li>Code: <a href="https://github.com/straight-shoota/sanitize" target="_blank">https://github.com/straight-shoota/sanitize</a></li><li>API docs: <a href="https://straight-shoota.github.io/sanitize/api/latest/" target="_blank">https://straight-shoota.github.io/sanitize/api/latest/</a></li><li>Issue tracker: <a href="https://github.com/straight-shoota/sanitize/issues" target="_blank">https://github.com/straight-shoota/sanitize/issues</a></li><li>Shardbox: <a href="https://shardbox.org/shards/sanitize" target="_blank">https://shardbox.org/shards/sanitize</a></li></ul>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<p><code></code>`yaml
+   dependencies:</p>
+
+<pre><code> sanitize:
+   github: straight<span class="o">-</span>shoota<span class="s">/sanitize</code></pre>
+
+<p><code></code>`</p>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2><a id="sanitization-features" class="anchor" href="#sanitization-features">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Sanitization Features</h2>
+
+<p>The <code><a href="Sanitize/Policy/HTMLSanitizer.html">Sanitize::Policy::HTMLSanitizer</a></code> policy applies the following sanitization steps. Except
+for the first one (which is essential to the entire process), all can be disabled
+or configured.</p>
+
+<ul><li>Turns malformed and malicious HTML into valid and safe markup.</li><li>Strips HTML elements and attributes not included in the safe list.</li><li>Sanitizes URL attributes (like <code>href</code> or <code>src</code>) with customizable sanitization
+  policy.</li><li>Adds <code>rel="nofollow"</code> to all links and <code>rel="noopener"</code> to links with <code>target</code>.</li><li>Validates values of accepted attributes <code>align</code>, <code>width</code> and <code>height</code>.</li><li>Filters <code>class</code> attributes based on a whitelist (by default all classes are
+  rejected).</li></ul>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<p>Transformation is based on rules defined by <code><a href="Sanitize/Policy.html">Sanitize::Policy</a></code> implementations.</p>
+
+<p>The recommended standard policy for HTML sanitization is <code>Sanitize::Policy::HTMLSanitizer.common</code>
+which represents good defaults for most use cases.
+It sanitizes user input against a known safe list of accepted elements and their
+attributes.</p>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;sanitize&quot;</span>
+
+sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.common
+sanitizer.process(<span class="s">%(&lt;a href=&quot;javascript:alert(&#39;foo&#39;)&quot;&gt;foo&lt;/a&gt;)</span>) <span class="c"># =&gt; %(foo)</span>
+sanitizer.process(<span class="s">%(&lt;p&gt;&lt;a href=&quot;foo&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>) <span class="c"># =&gt; %(&lt;p&gt;&lt;a href=&quot;foo&quot; rel=&quot;nofollow&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>
+sanitizer.process(<span class="s">%(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>) <span class="c"># =&gt; %(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>
+sanitizer.process(<span class="s">%(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&gt;&lt;td&gt;bar&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;)</span>) <span class="c"># =&gt; %(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&gt;&lt;td&gt;bar&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;)</span></code></pre>
+
+<p>Sanitization should always run after any other processing (for example rendering
+Markdown) and is a must when including HTML from untrusted sources into a web
+page.</p>
+
+<h3><a id="with-markd" class="anchor" href="#with-markd">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>With Markd</h3>
+
+<p>A typical format for user generated content is <code>Markdown</code>. Even though it has
+only a very limited feature set compared to HTML, it can still produce
+potentially harmful HTML and is is usually possible to embed raw HTML directly.
+So Sanitization is necessary.</p>
+
+<p>The most common Markdown renderer is <a href="https://shardbox.org/shards/markd" target="_blank">markd</a>,
+so here is a sample how to use it with <code>sanitize</code>:</p>
+
+<pre><code class="language-crystal">sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.common
+<span class="c"># Allow classes with `language-` prefix which are used for syntax highlighting.</span>
+sanitizer.valid_classes <span class="o">&lt;&lt;</span> <span class="s">/language-.+/</span>
+
+markdown <span class="o">=</span> <span class="s">&lt;&lt;-MD
+  Sanitization with [https://shardbox.org/shards/sanitize](sanitize) is not that
+  **difficult**.
+  ```cr
+  puts &quot;Hello World!&quot;
+  ```
+  &lt;p&gt;&lt;a href=&quot;javascript:alert(&quot;XSS attack!&quot;)&quot;&gt;Hello world!&lt;/a&gt;&lt;/p&gt;
+  MD</span>
+
+html <span class="o">=</span> <span class="t">Markd</span>.to_html(markdown)
+sanitized <span class="o">=</span> sanitizer.process(html)
+puts sanitized</code></pre>
+
+<p>The result:</p>
+
+<pre><code class="language-html">&lt;p>Sanitization with &lt;a href="sanitize" rel="nofollow">https://shardbox.org/shards/sanitize&lt;/a> is not that
+&lt;strong>difficult&lt;/strong>.&lt;/p>
+&lt;pre>&lt;code class="language-cr">puts &quot;Hello World!&quot;
+&lt;/code>&lt;/pre>
+&lt;p>Hello world!&lt;/p></code></pre>
+
+<h2><a id="limitations" class="anchor" href="#limitations">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Limitations</h2>
+
+<p>Sanitizing CSS is not supported. Thus <code>style</code> attributes can't be accepted in a
+safe way.
+CSS sanitization features may be added when a CSS parsing library is available.</p>
+
+<h2><a id="security" class="anchor" href="#security">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Security</h2>
+
+<p>If you want to privately disclose security-issues, please contact
+<a href="https://keybase.io/straightshoota" target="_blank">straightshoota</a> on Keybase or
+<a href="mailto:straightshoota@gmail.com" target="_blank">straightshoota@gmail.com</a> (PGP: <code>DF2D C9E9 FFB9 6AE0 2070 D5BC F0F3 4963 7AC5 087A</code>).</p>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li>Fork it (<a href="https://github.com/straight-shoota/sanitize/fork" target="_blank">https://github.com/straight-shoota/sanitize/fork</a>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+
+<ul><li><a href="https://github.com/straight-shoota" target="_blank">Johannes Müller</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>

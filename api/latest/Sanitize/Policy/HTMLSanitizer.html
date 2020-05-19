@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.33.0">
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/straight-shoota/sanitize">
+  <title>Sanitize::Policy::HTMLSanitizer - github.com/straight-shoota/sanitize</title>
+  <script type="text/javascript">
+    CrystalDoc.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/straight-shoota/sanitize/Sanitize" data-name="sanitize">
+      <a href="../../Sanitize.html">Sanitize</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize/Adapter" data-name="sanitize::adapter">
+      <a href="../../Sanitize/Adapter.html">Adapter</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Adapter/LibXML2" data-name="sanitize::adapter::libxml2">
+      <a href="../../Sanitize/Adapter/LibXML2.html">LibXML2</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/straight-shoota/sanitize/Sanitize/Policy" data-name="sanitize::policy">
+      <a href="../../Sanitize/Policy.html">Policy</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/HTMLSanitizer" data-name="sanitize::policy::htmlsanitizer">
+      <a href="../../Sanitize/Policy/HTMLSanitizer.html">HTMLSanitizer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/Text" data-name="sanitize::policy::text">
+      <a href="../../Sanitize/Policy/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Policy/Whitelist" data-name="sanitize::policy::whitelist">
+      <a href="../../Sanitize/Policy/Whitelist.html">Whitelist</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor" data-name="sanitize::processor">
+      <a href="../../Sanitize/Processor.html">Processor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor/CONTINUE" data-name="sanitize::processor::continue">
+      <a href="../../Sanitize/Processor/CONTINUE.html">CONTINUE</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/Processor/STOP" data-name="sanitize::processor::stop">
+      <a href="../../Sanitize/Processor/STOP.html">STOP</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/straight-shoota/sanitize/Sanitize/URISanitizer" data-name="sanitize::urisanitizer">
+      <a href="../../Sanitize/URISanitizer.html">URISanitizer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Sanitize::Policy::HTMLSanitizer
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Sanitize/Policy/HTMLSanitizer.html">Sanitize::Policy::HTMLSanitizer</a></li><li class="superclass"><a href="../../Sanitize/Policy/Whitelist.html">Sanitize::Policy::Whitelist</a></li><li class="superclass"><a href="../../Sanitize/Policy.html">Sanitize::Policy</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>This policy serves as a good default configuration that should fit most
+typical use cases for HTML sanitization.</p>
+
+<h2><a id="configurations" class="anchor" href="#configurations">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Configurations</h2>
+
+<p>It comes in three different configurations with different sets of supported
+HTML tags.</p>
+
+<p>They only differ in the default configuration of allowed tags and attributes.
+The transformation behaviour is otherwise the same.</p>
+
+<h3><a id="common-configuration" class="anchor" href="#common-configuration">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Common Configuration</h3>
+
+<p><code><a href="../../Sanitize/Policy/HTMLSanitizer.html#common:HTMLSanitizer-class-method">.common</a></code>: Accepts most standard tags and thus allows using a good
+amount of HTML features (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#COMMON_SAFELIST">COMMON_SAFELIST</a></code>).</p>
+
+<p>This is the recommended default configuration and should work for typical use
+cases unless strong restrictions on allowed content is required.</p>
+
+<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.common
+sanitizer.process(<span class="s">%(&lt;a href=&quot;javascript:alert(&#39;foo&#39;)&quot;&gt;foo&lt;/a&gt;)</span>)        <span class="c"># =&gt; %(foo)</span>
+sanitizer.process(<span class="s">%(&lt;p&gt;&lt;a href=&quot;foo&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>)                     <span class="c"># =&gt; %(&lt;p&gt;&lt;a href=&quot;foo&quot; rel=&quot;nofollow&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>
+sanitizer.process(<span class="s">%(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>)                              <span class="c"># =&gt; %(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>
+sanitizer.process(<span class="s">%(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&gt;&lt;td&gt;bar&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;)</span>) <span class="c"># =&gt; %(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&gt;&lt;td&gt;bar&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;)</span></code></pre>
+
+<p><span class="flag purple">NOTE</span>  This configuration (nor any other) does not accept <code>&lt;html&gt;</code>,
+<code>&lt;head&gt;</code>, or # <code>&lt;body&gt;</code> tags by default. In order to use
+<code>#sanitized_document</code> they need to be added explicitly to <code>accepted_arguments</code>.</p>
+
+<h3><a id="basic-configuration" class="anchor" href="#basic-configuration">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Basic Configuration</h3>
+
+<p><code><a href="../../Sanitize/Policy/HTMLSanitizer.html#basic:HTMLSanitizer-class-method">.basic</a></code>: This set accepts some basic tags including paragraphs, headlines,
+lists, and images (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#BASIC_SAFELIST">BASIC_SAFELIST</a></code>).</p>
+
+<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.basic
+sanitizer.process(<span class="s">%(&lt;a href=&quot;javascript:alert(&#39;foo&#39;)&quot;&gt;foo&lt;/a&gt;)</span>)        <span class="c"># =&gt; %(foo)</span>
+sanitizer.process(<span class="s">%(&lt;p&gt;&lt;a href=&quot;foo&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>)                     <span class="c"># =&gt; %(&lt;p&gt;&lt;a href=&quot;foo&quot; rel=&quot;nofollow&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>
+sanitizer.process(<span class="s">%(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>)                              <span class="c"># =&gt; %(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>
+sanitizer.process(<span class="s">%(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&gt;&lt;td&gt;bar&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;)</span>) <span class="c"># =&gt; %(foo bar)</span></code></pre>
+
+<h3><a id="inline-configuration" class="anchor" href="#inline-configuration">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Inline Configuration</h3>
+
+<p><code><a href="../../Sanitize/Policy/HTMLSanitizer.html#inline:HTMLSanitizer-class-method">.inline</a></code>: Accepts only a limited set of inline tags (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#INLINE_SAFELIST">INLINE_SAFELIST</a></code>).</p>
+
+<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.inline
+sanitizer.process(<span class="s">%(&lt;a href=&quot;javascript:alert(&#39;foo&#39;)&quot;&gt;foo&lt;/a&gt;)</span>)        <span class="c"># =&gt; %(foo)</span>
+sanitizer.process(<span class="s">%(&lt;p&gt;&lt;a href=&quot;foo&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>)                     <span class="c"># =&gt; %(&lt;a href=&quot;foo&quot; rel=&quot;nofollow&quot;&gt;foo&lt;/a&gt;)</span>
+sanitizer.process(<span class="s">%(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>)                              <span class="c"># =&gt; %()</span>
+sanitizer.process(<span class="s">%(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&gt;&lt;td&gt;bar&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;)</span>) <span class="c"># =&gt; %(foo bar)</span></code></pre>
+
+<h2><a id="attribute-transformations" class="anchor" href="#attribute-transformations">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Attribute Transformations</h2>
+
+<p>Attribute transformations are identical in all three configurations. But more
+advanced transforms won't apply if the respective attribute is not allowed in
+<code>accepted_tags</code>.
+So you can easily add additional elements and attributes to lower-tier sets
+and get the same attribute validation. For example: <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#inline:HTMLSanitizer-class-method">.inline</a></code> doesn't include
+<code>&lt;img&gt;</code> tags, but when <code>img</code> is added to <code>accepted_attributes</code>,
+the policy validates img tags the same way as in <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#common:HTMLSanitizer-class-method">.common</a></code>.</p>
+
+<h3><a id="url-sanitization" class="anchor" href="#url-sanitization">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>URL Sanitization</h3>
+
+<p>This transformation applies to attributes that contain a URL (configurable
+through (<code><a href="../../Sanitize/Policy/HTMLSanitizer.html#url_attributes:Set(String)-instance-method">#url_attributes</a></code>).</p>
+
+<ul><li>Makes sure the value is a valid URI (via <code>URI.parse</code>). If it does not parse,
+  the attribute value is set to empty string.</li><li>Sanitizes the URI via `URISanitizer (configurable trough <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#uri_sanitizer:Sanitize::URISanitizer-instance-method">#uri_sanitizer</a></code>).
+  If the sanitizer returns <code>nil</code>, the attribute value is set to empty string.</li></ul>
+
+<p>The same <code><a href="../../Sanitize/URISanitizer.html">URISanitizer</a></code> is used for any URL attributes.</p>
+
+<h3><a id="anchor-tags" class="anchor" href="#anchor-tags">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Anchor Tags</h3>
+
+<p>For <code>&lt;a&gt;</code> tags with a <code>href</code> attribute, there are two transforms:</p>
+
+<ul><li><code>rel="nofollow"</code> is added (can be disabled with <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#add_rel_nofollow:Bool-instance-method">#add_rel_nofollow</a></code>).</li><li><code>rel="noopener"</code> is added to links with <code>target</code> attribute (can be disabled
+  with <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#add_rel_noopener:Bool-instance-method">#add_rel_noopener</a></code>).</li></ul>
+
+<p>Anchor tags the have neither a <code>href</code>, <code>name</code> or <code>id</code> attribute are stripped.</p>
+
+<p><span class="flag purple">NOTE</span>  <code>name</code> and <code>id</code> attributes are not in any of the default sets of
+accepted attributes, so they can only be used when explicitly enabled.</p>
+
+<h3><a id="image-tags" class="anchor" href="#image-tags">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Image Tags</h3>
+
+<p><code>&lt;img&gt;</code> tags are stripped if they don't have a <code>src</code> attribute.</p>
+
+<h3><a id="size-attributes" class="anchor" href="#size-attributes">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Size Attributes</h3>
+
+<p>If a tag has <code>width</code> or <code>height</code> attributes, the values are validated to be
+numerical or percent values.
+By default, these attributes are only accepted for &lt;img&gt; tags.</p>
+
+<h3><a id="alignment-attribute" class="anchor" href="#alignment-attribute">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Alignment Attribute</h3>
+
+<p>The <code>align</code> attribute is validated against allowed values for this attribute:
+<code>center, left, right, justify, char</code>.
+If the value is invalid, the attribute is stripped.</p>
+
+<h3><a id="classes" class="anchor" href="#classes">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Classes</h3>
+
+<p><code>class</code> attributes are filtered to accept only classes described by
+<code><a href="../../Sanitize/Policy/HTMLSanitizer.html#valid_classes:Set(String%7CRegex)-instance-method">#valid_classes</a></code>. String values need to match the class name exactly, regex
+values need to match the entire class name.</p>
+
+<p><code>class</code> is accepted as a global attribute in the default configuration, but no
+values are allowed in <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#valid_classes:Set(String%7CRegex)-instance-method">#valid_classes</a></code>.</p>
+
+<p>All classes can be accepted by adding the match-all regular expression <code>/.*/</code>
+to <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#valid_classes:Set(String%7CRegex)-instance-method">#valid_classes</a></code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L120" target="_blank">
+        policy/html_sanitizer.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer/safelist.cr#L1" target="_blank">
+        policy/html_sanitizer/safelist.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="BASIC_SAFELIST">
+        <strong>BASIC_SAFELIST</strong> = <code><span class="t">INLINE_SAFELIST</span>.merge({<span class="s">&quot;blockquote&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;cite&quot;</span>}, <span class="s">&quot;br&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;h1&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;h2&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;h3&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;h4&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;h5&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;h6&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;hr&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;img&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;alt&quot;</span>, <span class="s">&quot;src&quot;</span>, <span class="s">&quot;longdesc&quot;</span>, <span class="s">&quot;width&quot;</span>, <span class="s">&quot;height&quot;</span>, <span class="s">&quot;align&quot;</span>}, <span class="s">&quot;li&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;ol&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;start&quot;</span>}, <span class="s">&quot;p&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;align&quot;</span>}, <span class="s">&quot;pre&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;ul&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>})</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Compatible with basic Markdown features.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="COMMON_SAFELIST">
+        <strong>COMMON_SAFELIST</strong> = <code><span class="t">BASIC_SAFELIST</span>.merge({<span class="s">&quot;dd&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;del&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;cite&quot;</span>}, <span class="s">&quot;details&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;dl&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;dt&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;div&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;ins&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;cite&quot;</span>}, <span class="s">&quot;kbd&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;q&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;cite&quot;</span>}, <span class="s">&quot;ruby&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;rp&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;rt&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;s&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;samp&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;strike&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;sub&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;summary&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;sup&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;table&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;time&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;datetime&quot;</span>}, <span class="s">&quot;tbody&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;td&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;tfoot&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;th&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;thead&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;tr&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;tt&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;var&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>})</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Accepts most standard tags and thus allows using a good amount of HTML features.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="INLINE_SAFELIST">
+        <strong>INLINE_SAFELIST</strong> = <code>{<span class="s">&quot;a&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;href&quot;</span>, <span class="s">&quot;hreflang&quot;</span>}, <span class="s">&quot;abbr&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;acronym&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;b&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;code&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;em&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;i&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;strong&quot;</span> => <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>, <span class="s">&quot;*&quot;</span> => <span class="t">Set</span> {<span class="s">&quot;dir&quot;</span>, <span class="s">&quot;lang&quot;</span>, <span class="s">&quot;title&quot;</span>, <span class="s">&quot;class&quot;</span>}}</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Only limited elements for inline text markup.</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#basic:HTMLSanitizer-class-method" class="signature"><strong>.basic</strong> : HTMLSanitizer</a>
+        
+          <div class="summary"><p>Creates an instance which accepts more basic tags including paragraphs, headlines, lists, and images (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#BASIC_SAFELIST">BASIC_SAFELIST</a></code>).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#common:HTMLSanitizer-class-method" class="signature"><strong>.common</strong> : HTMLSanitizer</a>
+        
+          <div class="summary"><p>Creates an instance which accepts even more standard tags and thus allows using a good amount of HTML features (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#COMMON_SAFELIST">COMMON_SAFELIST</a></code>).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inline:HTMLSanitizer-class-method" class="signature"><strong>.inline</strong> : HTMLSanitizer</a>
+        
+          <div class="summary"><p>Creates an instance which accepts a limited set of inline tags (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#INLINE_SAFELIST">INLINE_SAFELIST</a></code>).</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#accept_tag(tag:String,attributes:Set(String)=Set(String).new)-instance-method" class="signature"><strong>#accept_tag</strong>(tag : String, attributes : Set(String) = <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_rel_nofollow:Bool-instance-method" class="signature"><strong>#add_rel_nofollow</strong> : Bool</a>
+        
+          <div class="summary"><p>Add <code>rel="nofollow"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> attribute.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_rel_nofollow=(add_rel_nofollow)-instance-method" class="signature"><strong>#add_rel_nofollow=</strong>(add_rel_nofollow)</a>
+        
+          <div class="summary"><p>Add <code>rel="nofollow"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> attribute.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_rel_noopener:Bool-instance-method" class="signature"><strong>#add_rel_noopener</strong> : Bool</a>
+        
+          <div class="summary"><p>Add <code>rel="noopener"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> and <code>target</code> attribute.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_rel_noopener=(add_rel_noopener)-instance-method" class="signature"><strong>#add_rel_noopener=</strong>(add_rel_noopener)</a>
+        
+          <div class="summary"><p>Add <code>rel="noopener"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> and <code>target</code> attribute.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#append_attribute(attributes,attribute,value)-instance-method" class="signature"><strong>#append_attribute</strong>(attributes, attribute, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_links-instance-method" class="signature"><strong>#no_links</strong></a>
+        
+          <div class="summary"><p>Removes anchor tag (<code>&lt;a&gt;</code> from the list of accepted tags).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transform_attributes(tag:String,attributes:Hash(String,String)):String%7CCONTINUE%7CSTOP-instance-method" class="signature"><strong>#transform_attributes</strong>(tag : String, attributes : Hash(String, String)) : String | CONTINUE | STOP</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transform_classes(tag,attributes)-instance-method" class="signature"><strong>#transform_classes</strong>(tag, attributes)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transform_tag_a(attributes)-instance-method" class="signature"><strong>#transform_tag_a</strong>(attributes)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transform_tag_img(attributes)-instance-method" class="signature"><strong>#transform_tag_img</strong>(attributes)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transform_uri(tag,attributes,attribute,uri:URI):String?-instance-method" class="signature"><strong>#transform_uri</strong>(tag, attributes, attribute, uri : URI) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transform_url_attribute(tag,attributes,attribute,value)-instance-method" class="signature"><strong>#transform_url_attribute</strong>(tag, attributes, attribute, value)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transform_url_attributes(tag,attributes)-instance-method" class="signature"><strong>#transform_url_attributes</strong>(tag, attributes)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uri_sanitizer:Sanitize::URISanitizer-instance-method" class="signature"><strong>#uri_sanitizer</strong> : Sanitize::URISanitizer</a>
+        
+          <div class="summary"><p>Configures the <code><a href="../../Sanitize/URISanitizer.html">URISanitizer</a></code> to use for sanitizing URL attributes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uri_sanitizer=(uri_sanitizer)-instance-method" class="signature"><strong>#uri_sanitizer=</strong>(uri_sanitizer)</a>
+        
+          <div class="summary"><p>Configures the <code><a href="../../Sanitize/URISanitizer.html">URISanitizer</a></code> to use for sanitizing URL attributes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url_attributes:Set(String)-instance-method" class="signature"><strong>#url_attributes</strong> : Set(String)</a>
+        
+          <div class="summary"><p>Configures which attributes are considered to contain URLs.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url_attributes=(url_attributes:Set(String))-instance-method" class="signature"><strong>#url_attributes=</strong>(url_attributes : Set(String))</a>
+        
+          <div class="summary"><p>Configures which attributes are considered to contain URLs.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#valid_class?(tag,klass,valid_classes)-instance-method" class="signature"><strong>#valid_class?</strong>(tag, klass, valid_classes)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#valid_classes:Set(String%7CRegex)-instance-method" class="signature"><strong>#valid_classes</strong> : Set(String | Regex)</a>
+        
+          <div class="summary"><p>Configures which classes are valid for <code>class</code> attributes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#valid_classes=(valid_classes:Set(String%7CRegex))-instance-method" class="signature"><strong>#valid_classes=</strong>(valid_classes : Set(String | Regex))</a>
+        
+          <div class="summary"><p>Configures which classes are valid for <code>class</code> attributes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#valid_classes=(classes)-instance-method" class="signature"><strong>#valid_classes=</strong>(classes)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Sanitize/Policy/Whitelist.html">Sanitize::Policy::Whitelist</a></code></h3>
+  
+  
+    <a href="../../Sanitize/Policy/Whitelist.html#accepted_attributes:Hash(String,Set(String))-instance-method" class="tooltip">
+      <span>accepted_attributes : Hash(String, Set(String))</span>
+    accepted_attributes</a>, 
+    
+  
+    <a href="../../Sanitize/Policy/Whitelist.html#accepted_attributes=(accepted_attributes:Hash(String,Set(String)))-instance-method" class="tooltip">
+      <span>accepted_attributes=(accepted_attributes : Hash(String, Set(String)))</span>
+    accepted_attributes=</a>, 
+    
+  
+    <a href="../../Sanitize/Policy/Whitelist.html#global_attributes-instance-method" class="tooltip">
+      <span>global_attributes</span>
+    global_attributes</a>, 
+    
+  
+    <a href="../../Sanitize/Policy/Whitelist.html#transform_attributes(name:String,attributes:Hash(String,String)):String%7CCONTINUE%7CSTOP-instance-method" class="tooltip">
+      <span>transform_attributes(name : String, attributes : Hash(String, String)) : String | CONTINUE | STOP</span>
+    transform_attributes</a>, 
+    
+  
+    <a href="../../Sanitize/Policy/Whitelist.html#transform_tag(name:String,attributes:Hash(String,String)):String%7CCONTINUE%7CSTOP-instance-method" class="tooltip">
+      <span>transform_tag(name : String, attributes : Hash(String, String)) : String | CONTINUE | STOP</span>
+    transform_tag</a>, 
+    
+  
+    <a href="../../Sanitize/Policy/Whitelist.html#transform_text(text:String):String?-instance-method" class="tooltip">
+      <span>transform_text(text : String) : String?</span>
+    transform_text</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../../Sanitize/Policy/Whitelist.html">Sanitize::Policy::Whitelist</a></code></h3>
+  
+  
+    <a href="../../Sanitize/Policy/Whitelist.html#new(accepted_attributes:Hash(String,Set(String)))-class-method" class="tooltip">
+      <span>new(accepted_attributes : Hash(String, Set(String)))</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../Sanitize/Policy.html">Sanitize::Policy</a></code></h3>
+  
+  
+    <a href="../../Sanitize/Policy.html#block_tag?(name)-instance-method" class="tooltip">
+      <span>block_tag?(name)</span>
+    block_tag?</a>, 
+    
+  
+    <a href="../../Sanitize/Policy.html#block_whitespace:String-instance-method" class="tooltip">
+      <span>block_whitespace : String</span>
+    block_whitespace</a>, 
+    
+  
+    <a href="../../Sanitize/Policy.html#block_whitespace=(block_whitespace)-instance-method" class="tooltip">
+      <span>block_whitespace=(block_whitespace)</span>
+    block_whitespace=</a>, 
+    
+  
+    <a href="../../Sanitize/Policy.html#process(html:String%7CXML::Node):String-instance-method" class="tooltip">
+      <span>process(html : String | XML::Node) : String</span>
+    process</a>, 
+    
+  
+    <a href="../../Sanitize/Policy.html#process_document(html:String%7CXML::Node):String-instance-method" class="tooltip">
+      <span>process_document(html : String | XML::Node) : String</span>
+    process_document</a>, 
+    
+  
+    <a href="../../Sanitize/Policy.html#transform_tag(name:String,attributes:Hash(String,String)):String%7CProcessor::CONTINUE%7CProcessor::STOP-instance-method" class="tooltip">
+      <span>transform_tag(name : String, attributes : Hash(String, String)) : String | Processor::CONTINUE | Processor::STOP</span>
+    transform_tag</a>, 
+    
+  
+    <a href="../../Sanitize/Policy.html#transform_text(text:String):String?-instance-method" class="tooltip">
+      <span>transform_text(text : String) : String?</span>
+    transform_text</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="basic:HTMLSanitizer-class-method">
+      <div class="signature">
+        
+        def self.<strong>basic</strong> : <a href="../../Sanitize/Policy/HTMLSanitizer.html">HTMLSanitizer</a>
+
+        <a class="method-permalink" href="#basic:HTMLSanitizer-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an instance which accepts more basic tags including paragraphs,
+headlines, lists, and images (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#BASIC_SAFELIST">BASIC_SAFELIST</a></code>).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L158" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="common:HTMLSanitizer-class-method">
+      <div class="signature">
+        
+        def self.<strong>common</strong> : <a href="../../Sanitize/Policy/HTMLSanitizer.html">HTMLSanitizer</a>
+
+        <a class="method-permalink" href="#common:HTMLSanitizer-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an instance which accepts even more standard tags and thus allows
+using a good amount of HTML features (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#COMMON_SAFELIST">COMMON_SAFELIST</a></code>).</p>
+
+<p>Unless you need tight restrictions on allowed content, this is the
+recommended default.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L169" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inline:HTMLSanitizer-class-method">
+      <div class="signature">
+        
+        def self.<strong>inline</strong> : <a href="../../Sanitize/Policy/HTMLSanitizer.html">HTMLSanitizer</a>
+
+        <a class="method-permalink" href="#inline:HTMLSanitizer-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an instance which accepts a limited set of inline tags (see
+<code><a href="../../Sanitize/Policy/HTMLSanitizer.html#INLINE_SAFELIST">INLINE_SAFELIST</a></code>).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L150" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="accept_tag(tag:String,attributes:Set(String)=Set(String).new)-instance-method">
+      <div class="signature">
+        
+        def <strong>accept_tag</strong>(tag : String, attributes : Set(String) = <span class="t">Set</span>(<span class="t">String</span>).<span class="k">new</span>)
+
+        <a class="method-permalink" href="#accept_tag(tag:String,attributes:Set(String)=Set(String).new)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L184" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_rel_nofollow:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>add_rel_nofollow</strong> : Bool
+
+        <a class="method-permalink" href="#add_rel_nofollow:Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Add <code>rel="nofollow"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> attribute.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_rel_nofollow=(add_rel_nofollow)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_rel_nofollow=</strong>(add_rel_nofollow)
+
+        <a class="method-permalink" href="#add_rel_nofollow=(add_rel_nofollow)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Add <code>rel="nofollow"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> attribute.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_rel_noopener:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>add_rel_noopener</strong> : Bool
+
+        <a class="method-permalink" href="#add_rel_noopener:Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Add <code>rel="noopener"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> and <code>target</code> attribute.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L125" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_rel_noopener=(add_rel_noopener)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_rel_noopener=</strong>(add_rel_noopener)
+
+        <a class="method-permalink" href="#add_rel_noopener=(add_rel_noopener)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Add <code>rel="noopener"</code> to every <code>&lt;a&gt;</code> tag with <code>href</code> and <code>target</code> attribute.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L125" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="append_attribute(attributes,attribute,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>append_attribute</strong>(attributes, attribute, value)
+
+        <a class="method-permalink" href="#append_attribute(attributes,attribute,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L331" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_links-instance-method">
+      <div class="signature">
+        
+        def <strong>no_links</strong>
+
+        <a class="method-permalink" href="#no_links-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Removes anchor tag (<code>&lt;a&gt;</code> from the list of accepted tags).</p>
+
+<p><span class="flag purple">NOTE</span>  This doesn't reject attributes with URL values for other tags.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transform_attributes(tag:String,attributes:Hash(String,String)):String|CONTINUE|STOP-instance-method">
+      <div class="signature">
+        
+        def <strong>transform_attributes</strong>(tag : String, attributes : Hash(String, String)) : String | CONTINUE | STOP
+
+        <a class="method-permalink" href="#transform_attributes(tag:String,attributes:Hash(String,String)):String%7CCONTINUE%7CSTOP-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L188" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transform_classes(tag,attributes)-instance-method">
+      <div class="signature">
+        
+        def <strong>transform_classes</strong>(tag, attributes)
+
+        <a class="method-permalink" href="#transform_classes(tag,attributes)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L275" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transform_tag_a(attributes)-instance-method">
+      <div class="signature">
+        
+        def <strong>transform_tag_a</strong>(attributes)
+
+        <a class="method-permalink" href="#transform_tag_a(attributes)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L217" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transform_tag_img(attributes)-instance-method">
+      <div class="signature">
+        
+        def <strong>transform_tag_img</strong>(attributes)
+
+        <a class="method-permalink" href="#transform_tag_img(attributes)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L211" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transform_uri(tag,attributes,attribute,uri:URI):String?-instance-method">
+      <div class="signature">
+        
+        def <strong>transform_uri</strong>(tag, attributes, attribute, uri : URI) : String?
+
+        <a class="method-permalink" href="#transform_uri(tag,attributes,attribute,uri:URI):String?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L259" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transform_url_attribute(tag,attributes,attribute,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>transform_url_attribute</strong>(tag, attributes, attribute, value)
+
+        <a class="method-permalink" href="#transform_url_attribute(tag,attributes,attribute,value)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L241" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transform_url_attributes(tag,attributes)-instance-method">
+      <div class="signature">
+        
+        def <strong>transform_url_attributes</strong>(tag, attributes)
+
+        <a class="method-permalink" href="#transform_url_attributes(tag,attributes)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L231" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uri_sanitizer:Sanitize::URISanitizer-instance-method">
+      <div class="signature">
+        
+        def <strong>uri_sanitizer</strong> : <a href="../../Sanitize/URISanitizer.html">Sanitize::URISanitizer</a>
+
+        <a class="method-permalink" href="#uri_sanitizer:Sanitize::URISanitizer-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configures the <code><a href="../../Sanitize/URISanitizer.html">URISanitizer</a></code> to use for sanitizing URL attributes.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L128" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uri_sanitizer=(uri_sanitizer)-instance-method">
+      <div class="signature">
+        
+        def <strong>uri_sanitizer=</strong>(uri_sanitizer)
+
+        <a class="method-permalink" href="#uri_sanitizer=(uri_sanitizer)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configures the <code><a href="../../Sanitize/URISanitizer.html">URISanitizer</a></code> to use for sanitizing URL attributes.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L128" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url_attributes:Set(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>url_attributes</strong> : Set(String)
+
+        <a class="method-permalink" href="#url_attributes:Set(String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configures which attributes are considered to contain URLs. If empty, URL
+sanitization is disabled.</p>
+
+<p>Default value: <code>Set{"src", "href", "action", "cite", "longdesc"}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L134" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url_attributes=(url_attributes:Set(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>url_attributes=</strong>(url_attributes : Set(String))
+
+        <a class="method-permalink" href="#url_attributes=(url_attributes:Set(String))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configures which attributes are considered to contain URLs. If empty, URL
+sanitization is disabled.</p>
+
+<p>Default value: <code>Set{"src", "href", "action", "cite", "longdesc"}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L134" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="valid_class?(tag,klass,valid_classes)-instance-method">
+      <div class="signature">
+        
+        def <strong>valid_class?</strong>(tag, klass, valid_classes)
+
+        <a class="method-permalink" href="#valid_class?(tag,klass,valid_classes)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L314" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="valid_classes:Set(String|Regex)-instance-method">
+      <div class="signature">
+        
+        def <strong>valid_classes</strong> : Set(String | Regex)
+
+        <a class="method-permalink" href="#valid_classes:Set(String%7CRegex)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configures which classes are valid for <code>class</code> attributes.</p>
+
+<p>String values need to match the class name exactly, regex
+values need to match the entire class name.</p>
+
+<p>Default value: empty</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L142" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="valid_classes=(valid_classes:Set(String|Regex))-instance-method">
+      <div class="signature">
+        
+        def <strong>valid_classes=</strong>(valid_classes : Set(String | Regex))
+
+        <a class="method-permalink" href="#valid_classes=(valid_classes:Set(String%7CRegex))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configures which classes are valid for <code>class</code> attributes.</p>
+
+<p>String values need to match the class name exactly, regex
+values need to match the entire class name.</p>
+
+<p>Default value: empty</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L142" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="valid_classes=(classes)-instance-method">
+      <div class="signature">
+        
+        def <strong>valid_classes=</strong>(classes)
+
+        <a class="method-permalink" href="#valid_classes=(classes)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/straight-shoota/sanitize/blob/d202a6873da4d1dbe9f7a9a968c8d1f53fb4d277/src/policy/html_sanitizer.cr#L144" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
