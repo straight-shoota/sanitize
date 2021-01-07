@@ -637,12 +637,12 @@ If <code>nil</code>, all schemes are accepted (this setting is potentially dange
           
           <p>Configures whether fragment-only URIs are resolved on <code><a href="../Sanitize/URISanitizer.html#base_url:URI?-instance-method">#base_url</a></code>.</p>
 
-<pre><code class="language-cr">sanitizer = Sanitize::URISanitizer.new
-sanitizer.base_url = URI.parse("https://example.com/base/")
-sanitizer.sanitize(URI.parse("#foo")) # => "#foo"
+<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">URISanitizer</span>.<span class="k">new</span>
+sanitizer.base_url <span class="o">=</span> <span class="t">URI</span>.parse(<span class="s">&quot;https://example.com/base/&quot;</span>)
+sanitizer.sanitize(<span class="t">URI</span>.parse(<span class="s">&quot;#foo&quot;</span>)) <span class="c"># =&gt; &quot;#foo&quot;</span>
 
-sanitizer.resolve_fragment_urls = true
-sanitizer.sanitize(URI.parse("#foo")) # => "https://example.com/base/#foo"</code></pre>
+sanitizer.resolve_fragment_urls <span class="o">=</span> <span class="n">true</span>
+sanitizer.sanitize(<span class="t">URI</span>.parse(<span class="s">&quot;#foo&quot;</span>)) <span class="c"># =&gt; &quot;https://example.com/base/#foo&quot;</span></code></pre>
         </div>
       
       <br/>
@@ -663,12 +663,12 @@ sanitizer.sanitize(URI.parse("#foo")) # => "https://example.com/base/#foo"</code
           
           <p>Configures whether fragment-only URIs are resolved on <code><a href="../Sanitize/URISanitizer.html#base_url:URI?-instance-method">#base_url</a></code>.</p>
 
-<pre><code class="language-cr">sanitizer = Sanitize::URISanitizer.new
-sanitizer.base_url = URI.parse("https://example.com/base/")
-sanitizer.sanitize(URI.parse("#foo")) # => "#foo"
+<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">URISanitizer</span>.<span class="k">new</span>
+sanitizer.base_url <span class="o">=</span> <span class="t">URI</span>.parse(<span class="s">&quot;https://example.com/base/&quot;</span>)
+sanitizer.sanitize(<span class="t">URI</span>.parse(<span class="s">&quot;#foo&quot;</span>)) <span class="c"># =&gt; &quot;#foo&quot;</span>
 
-sanitizer.resolve_fragment_urls = true
-sanitizer.sanitize(URI.parse("#foo")) # => "https://example.com/base/#foo"</code></pre>
+sanitizer.resolve_fragment_urls <span class="o">=</span> <span class="n">true</span>
+sanitizer.sanitize(<span class="t">URI</span>.parse(<span class="s">&quot;#foo&quot;</span>)) <span class="c"># =&gt; &quot;https://example.com/base/#foo&quot;</span></code></pre>
         </div>
       
       <br/>
