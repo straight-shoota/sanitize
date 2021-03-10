@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="generator" content="Crystal Docs 0.35.1">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="sanitize">
+
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="sanitize">
+  <meta name="repository-name" content="sanitize">
   <title>Sanitize::Policy::HTMLSanitizer - sanitize master-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
@@ -25,6 +20,11 @@
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -181,7 +181,7 @@ amount of HTML features (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.
 <p>This is the recommended default configuration and should work for typical use
 cases unless strong restrictions on allowed content is required.</p>
 
-<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.common
+<pre><code class="language-crystal">sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.common
 sanitizer.process(<span class="s">%(&lt;a href=&quot;javascript:alert(&#39;foo&#39;)&quot;&gt;foo&lt;/a&gt;)</span>)        <span class="c"># =&gt; %(foo)</span>
 sanitizer.process(<span class="s">%(&lt;p&gt;&lt;a href=&quot;foo&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>)                     <span class="c"># =&gt; %(&lt;p&gt;&lt;a href=&quot;foo&quot; rel=&quot;nofollow&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>
 sanitizer.process(<span class="s">%(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>)                              <span class="c"># =&gt; %(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>
@@ -200,7 +200,7 @@ sanitizer.process(<span class="s">%(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&
 <p><code><a href="../../Sanitize/Policy/HTMLSanitizer.html#basic:HTMLSanitizer-class-method">.basic</a></code>: This set accepts some basic tags including paragraphs, headlines,
 lists, and images (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#BASIC_SAFELIST">BASIC_SAFELIST</a></code>).</p>
 
-<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.basic
+<pre><code class="language-crystal">sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.basic
 sanitizer.process(<span class="s">%(&lt;a href=&quot;javascript:alert(&#39;foo&#39;)&quot;&gt;foo&lt;/a&gt;)</span>)        <span class="c"># =&gt; %(foo)</span>
 sanitizer.process(<span class="s">%(&lt;p&gt;&lt;a href=&quot;foo&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>)                     <span class="c"># =&gt; %(&lt;p&gt;&lt;a href=&quot;foo&quot; rel=&quot;nofollow&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>
 sanitizer.process(<span class="s">%(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>)                              <span class="c"># =&gt; %(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>
@@ -214,7 +214,7 @@ sanitizer.process(<span class="s">%(&lt;table&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&
 
 <p><code><a href="../../Sanitize/Policy/HTMLSanitizer.html#inline:HTMLSanitizer-class-method">.inline</a></code>: Accepts only a limited set of inline tags (see <code><a href="../../Sanitize/Policy/HTMLSanitizer.html#INLINE_SAFELIST">INLINE_SAFELIST</a></code>).</p>
 
-<pre><code>sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.inline
+<pre><code class="language-crystal">sanitizer <span class="o">=</span> <span class="t">Sanitize</span><span class="t">::</span><span class="t">Policy</span><span class="t">::</span><span class="t">HTMLSanitizer</span>.inline
 sanitizer.process(<span class="s">%(&lt;a href=&quot;javascript:alert(&#39;foo&#39;)&quot;&gt;foo&lt;/a&gt;)</span>)        <span class="c"># =&gt; %(foo)</span>
 sanitizer.process(<span class="s">%(&lt;p&gt;&lt;a href=&quot;foo&quot;&gt;foo&lt;/a&gt;&lt;/p&gt;)</span>)                     <span class="c"># =&gt; %(&lt;a href=&quot;foo&quot; rel=&quot;nofollow&quot;&gt;foo&lt;/a&gt;)</span>
 sanitizer.process(<span class="s">%(&lt;img src=&quot;foo.jpg&quot;&gt;)</span>)                              <span class="c"># =&gt; %()</span>
