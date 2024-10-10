@@ -1,15 +1,15 @@
 -include Makefile.local # for optional local options
 
-BUILD_TARGET ::= bin/app
+BUILD_TARGET := bin/app
 
 # The shards command to use
 SHARDS ?= shards
 # The crystal command to use
 CRYSTAL ?= crystal
 
-SRC_SOURCES ::= $(shell find src -name '*.cr' 2>/dev/null)
-LIB_SOURCES ::= $(shell find lib -name '*.cr' 2>/dev/null)
-SPEC_SOURCES ::= $(shell find spec -name '*.cr' 2>/dev/null)
+SRC_SOURCES := $(shell find src -name '*.cr' 2>/dev/null)
+LIB_SOURCES := $(shell find lib -name '*.cr' 2>/dev/null)
+SPEC_SOURCES := $(shell find spec -name '*.cr' 2>/dev/null)
 
 .PHONY: test
 test: ## Run the test suite
