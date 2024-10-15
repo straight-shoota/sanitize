@@ -29,7 +29,7 @@ struct Sanitize::Adapter::LibXML2
     node = XML.parse_html(html, XML::HTMLParserOptions.default | XML::HTMLParserOptions::NOIMPLIED | XML::HTMLParserOptions::NODEFDTD)
   end
 
-  def self.build(fragment : Bool)
+  def self.build(fragment : Bool, &)
     result = String.build do |io|
       builder = XML::Builder.new(io)
 
