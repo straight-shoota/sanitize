@@ -6,10 +6,14 @@ test
 <===>
 
 
-# Pending because libxml2 behaviour changed in 2.9.13 (https://gitlab.gnome.org/GNOME/libxml2/-/issues/339)
-<===> pending:fragment.html
+# libxml2 behaviour changed in 2.9.13 (https://gitlab.gnome.org/GNOME/libxml2/-/issues/339)
+<===> fragment.html
 <<<><<script src=http://fake-evil.ru/test.js>
-<===> pending:common.html
+<===> libxml2>2.9.13:common.html
+&lt;&lt;&lt;&gt;&lt;
+<===> libxml2==2.9.13:common.html
+
+<===> libxml2<2.9.13:common.html
 &lt;&lt;&lt;&gt;&lt;
 <===>
 
@@ -430,15 +434,19 @@ text
 
 <===> fragment.html
 <div>text <!--[if IE]> <!--[if gte 6]> comment <[endif]--><[endif]--></div>
-<===> common.html
+<===> libxml2<2.9.14:common.html
 <div>text </div>
+<===> libxml2>=2.9.14:common.html
+<div>text &lt;[endif]--&gt;</div>
 <===>
 
 
 <===> fragment.html
 <div>text <!--[if IE]> <!-- IE specific --> comment <[endif]--></div>
-<===> common.html
+<===> libxml2<2.9.14:common.html
 <div>text  comment </div>
+<===> libxml2>=2.9.14:common.html
+<div>text  comment &lt;[endif]--&gt;</div>
 <===>
 
 
@@ -451,14 +459,22 @@ text
 
 <===> fragment.html
 <div>text <![if !IE]> comment <![endif]></div>
-<===> common.html
+<===> libxml2>2.9.14:common.html
+<div>text  comment </div>
+<===> libxml2==2.9.14:common.html
+<div>text &lt;![if !IE]&gt; comment &lt;![endif]&gt;</div>
+<===> libxml2<2.9.14:common.html
 <div>text  comment </div>
 <===>
 
 
 <===> fragment.html
 <div>text <![ if !IE]> comment <![endif]></div>
-<===> common.html
+<===> libxml2>2.9.14:common.html
+<div>text  comment </div>
+<===> libxml2==2.9.14:common.html
+<div>text &lt;![ if !IE]&gt; comment &lt;![endif]&gt;</div>
+<===> libxml2<2.9.14:common.html
 <div>text  comment </div>
 <===>
 
