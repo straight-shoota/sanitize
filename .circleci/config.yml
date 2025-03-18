@@ -27,6 +27,8 @@ jobs:
       - run: shards
       - save_cache: *save_shards_cache
 
+      - run: pkg-config --version xml2
+
       - run: make test
 
       - run: crystal tool format --check spec src
